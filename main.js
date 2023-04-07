@@ -42,6 +42,8 @@ var mantraButton = document.querySelector('#mantra');
 var submitButton = document.querySelector('button');
 var img = document.querySelector('img');
 var messageSection = document.querySelector('#message-box')
+var errorBox = document.querySelector('.error-box'
+)
 
 // Event Listeners:
 submitButton.addEventListener('click', storeUserSelection);
@@ -51,11 +53,14 @@ submitButton.addEventListener('click', storeUserSelection);
 function storeUserSelection() {
     if (affirmationButton.checked) {
         userSelection = 'affirmation';
+        randomMessage(userSelection);
     } else if (mantraButton.checked) {
         userSelection = 'mantra';
+        randomMessage(userSelection);
+    } else {
+        errorBox.classList.remove('invisible');
+        console.log(errorBox)
     }
-
-    randomMessage(userSelection);
 }
 
 function getRandomIndex(array) {

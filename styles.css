@@ -80,7 +80,7 @@ label {
   width: 60rem;
   height: 10rem;
   font-size: 1.5rem;
-  margin: 7rem;
+  margin: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,4 +98,15 @@ img {
 
 .hidden {
   display: none;
+}
+
+.error-box {
+    background-color: #f7e4bf;
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 3rem
+}
+
+.invisible {
+    visibility: hidden;
 }
