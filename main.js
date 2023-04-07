@@ -41,7 +41,7 @@ var affirmationButton = document.querySelector('#affirmation');
 var mantraButton = document.querySelector('#mantra');
 var submitButton = document.querySelector('button');
 var img = document.querySelector('img');
-var messageSection = document.querySelector('#message')
+var messageSection = document.querySelector('#message-box')
 
 // Event Listeners:
 submitButton.addEventListener('click', storeUserSelection);
@@ -71,18 +71,6 @@ function randomMessage(userSelection) {
         messageSection.innerHTML = `<p>${affirmations[randomIndex]}</p>`;
     } else  if (userSelection === 'mantra') {
         var randomIndex = getRandomIndex(mantras);
-        messageSection.innerHTML = `<p>${mantras[randomIndex]}</p>`;
+        messageSection.innerHTML = `<p id="message">${mantras[randomIndex]}</p>`;
     }
 }
-
-// event handler
-    // hide meditation icon DONE
-    // store selection DONE
-    // conditional
-        // if userSelection === affirmation
-        // display random index from affirmations array
-        // add it to innerHTML of #message
-
-        // if userSelection === mantra
-        // display random index from mantra array
-         // add it to innerHTML of #message
