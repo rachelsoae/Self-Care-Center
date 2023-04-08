@@ -104,9 +104,19 @@ img {
     background-color: #f7e4bf;
     border-radius: 12px;
     padding: 1rem;
-    margin: 3rem
+    margin: 3rem 0 2.25rem;
 }
 
 .invisible {
     visibility: hidden;
+}
+
+.clear-button {
+    font-family: 'Quicksand', sans-serif;
+    padding: 0.5rem;
+    border-color: #ffffff;
+    border-width: 0;
+    border-radius: 8px;
+    margin: 0.1rem;
+    opacity: 0.75;
 }

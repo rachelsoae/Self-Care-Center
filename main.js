@@ -40,26 +40,35 @@ var userSelection;
 var affirmationButton = document.querySelector('#affirmation');
 var mantraButton = document.querySelector('#mantra');
 var submitButton = document.querySelector('button');
+var errorBox = document.querySelector('.error-box');
 var img = document.querySelector('img');
-var messageSection = document.querySelector('#message-box')
-var errorBox = document.querySelector('.error-box'
-)
+var messageSection = document.querySelector('#message-box');
+var message = document.querySelector('.message');
+var clearButton = document.querySelector('.clear-button');
 
 // Event Listeners:
 submitButton.addEventListener('click', storeUserSelection);
+clearButton.addEventListener('click', clearMessage);
 
 // Event Handlers:
+
+function show(element) {
+    element.classList.remove('hidden');
+}
+
+function hide(element) {
+    element.classList.add('hidden');
+}
 
 function storeUserSelection() {
     if (affirmationButton.checked) {
         userSelection = 'affirmation';
-        randomMessage(userSelection);
+        generateRandomMessage(userSelection);
     } else if (mantraButton.checked) {
         userSelection = 'mantra';
-        randomMessage(userSelection);
+        generateRandomMessage(userSelection);
     } else {
         errorBox.classList.remove('invisible');
-        console.log(errorBox)
     }
 }
 
@@ -68,14 +77,30 @@ function getRandomIndex(array) {
     return randomIndex;
 }
 
-function randomMessage(userSelection) {
-    img.classList.add('hidden');
+function generateRandomMessage(userSelection) {
+    errorBox.classList.add('invisible');
 
     if (userSelection === 'affirmation') {
         var randomIndex = getRandomIndex(affirmations);
-        messageSection.innerHTML = `<p>${affirmations[randomIndex]}</p>`;
+        var randomMessage = affirmations[randomIndex];
     } else  if (userSelection === 'mantra') {
         var randomIndex = getRandomIndex(mantras);
-        messageSection.innerHTML = `<p id="message">${mantras[randomIndex]}</p>`;
+        var randomMessage = affirmations[randomIndex];
     }
+
+    displayMessage(randomMessage);
+}
+
+function displayMessage(randomMessage) {
+    hide(img);
+    show(message);
+    show(clearButton);
+   
+    message.innerText = randomMessage;
+}
+
+function clearMessage() {
+    hide(message);
+    hide(clearButton);
+    show(img);
 }
