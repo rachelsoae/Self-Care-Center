@@ -8,7 +8,9 @@ black - #000000;
 */
 
 html {
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
+  font-size: 100%;
 }
 
 body { 
@@ -22,14 +24,15 @@ body {
 
 h1 {
   color: #ffffff;
-  font-size: 2.35rem;
-  margin: 3rem;
+  font-size: 2rem;
+  margin: 1.125em;
 }
 
 h2 {
   color: #ffffff;
-  font-size: 1.75rem;
-  margin: 4rem 0 0.5rem;
+  font-size: 1.5rem;
+  margin-top: 2em;
+  margin-bottom: 0.25em;
 }
 
 .box {
@@ -38,19 +41,20 @@ h2 {
 }
 
 #buttons {
-  width: 35%;
-  padding: 0.5rem 6rem 0.75rem;
+  width: 30vw;
+  padding: 0 6em;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .radio-buttons {
-  margin: 1%;
-  width: 90%;
+  height: 50%;
+  width: 100%;
+  padding: 0.5em 0.125em;
+  margin: 0.5em;
   display: flex;
   justify-content: space-between;
-  padding: 0.25rem 0 0.75rem;
 }
 
 input {
@@ -61,36 +65,43 @@ input {
 label {
   color: #000000;
   font-style: italic;
-  font-size: 1.4rem;
-  padding-left: 0.75rem;
+  font-size: 1.25rem;
+  padding-left: 0.4em;
+}
+
+.submit-button-box {
+  height: 50%;
+  width: 100%;
+  padding: 0.375em 1em 0.5em;
+  display: flex;
+  justify-content: center;
 }
 
 .submit-button {
-  width: 15rem;
-  height: 2rem;
+  height: 100%;
+  width: 50%;
   background-color: #134d71;
   color: #ffffff; 
   font-family: 'Quicksand', sans-serif;
-  font-size: 1.3rem;
-  padding: 0.25rem 1rem 2rem;
+  font-size: 1.125rem;
   border: 0;
-  border-radius: 8px; 
+  border-radius: 6px; 
+  padding: 0.2em 2em;
 }
 
 #message-box {
-  width: 75%;
-  height: 10rem;
+  width: 65vw;
+  height: 20vh;
   font-size: 1.5rem;
+  padding: 0 1em;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 
 img {
-  max-width 100%;
-  height: 65%;
-  margin: 0.5%;
+  width: 100%;
+  height: 55%;
 }
 
 .hidden {
@@ -98,17 +109,21 @@ img {
 }
 
 .error-box {
+  height: 5vh;
+  width: 25vw;
   background-color: #f7e4bf;
-  border-radius: 12px;
-  padding: 0.75rem 1rem;
-  margin: 1.5rem;
+  border-radius: 10px;
+  padding: 0.25em;
+  margin: 2em;
+  display: flex;
+  align-items: center;
 }
 
 .error {
   width: 100%;
   font-size: 1.25rem;
   text-align: center;
-  margin: 2%;
+  margin: 0.125em 0.75em;
 }
 
 .invisible {
@@ -116,31 +131,68 @@ img {
 }
 
 .clear-box {
-    display:flex;
-    justify-content: center;
+  display:flex;
+  justify-content: center;
 }
 
 .clear-button {
   font-family: 'Quicksand', sans-serif;
   font-size: 1.125rem;
-  padding: 0.5rem;
+  padding: 0.375em 0.5em;
   border-color: #ffffff;
   border-width: 0;
   border-radius: 8px;
   width: 100%;
-  margin: 15% 0;
+  margin-top: 1em;
   opacity: 0.75;
 }
 
+/* XL Screen Settings */
+@media screen and (min-width: 1441px) {
+  html {
+    font-size: 225%;
+  }
+
+  .box {
+    border-radius: 20px;
+  }
+
+  .submit-button-box {
+    height: 50%;
+    width: 100%;
+  }
+  
+  .submit-button {
+    height: 100%;
+    width: 65%;
+    border-radius: 14px; 
+  }
+
+  .error-box {
+    width: 40vw;
+    border-radius: 20px;
+  }
+
+  .clear-button {
+    border-radius: 14px;
+  }
+
+}
+
 /* tablet settings */
-@media screen and (max-width: 768px) {
-  h2 {
-    margin: 0 0 0.5rem;
+/* @media screen and (max-width: 768px) {
+  h1 {
+    margin: 1em;
+    }
+  
+    h2 {
+    margin-top: 0.75em;
+    margin-bottom: 0.25em;
   }
 
   #buttons {
     width: 50%;
-    padding: 0.5rem 2rem 0.75rem;
+    padding: 0.125em 2em;
   }
   
   .radio-buttons {
@@ -158,12 +210,13 @@ img {
 
   .error-box {
     width: 40%;
-    margin: 1.25rem;
-    padding: 0.5rem;
+    margin: 1em;
   }
 
   .error {
-    margin: 0.5%;
+    font-size: 1.125rem;
+    text-align: center;
+    margin: 0.125em;
   }
 
   .clear-box {
@@ -172,8 +225,5 @@ img {
 
   .clear-button {
     width: 20%;
-    padding: 0.5rem;
-    margin: 1.25rem;
-    font-size: 1.10rem;
   }
-}
+} */
