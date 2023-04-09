@@ -45,14 +45,18 @@ var img = document.querySelector('img');
 var messageSection = document.querySelector('#message-box');
 var message = document.querySelector('.message');
 var clearButton = document.querySelector('.clear-button');
+var radioButtonBox = document.querySelector('.radio-buttons')
 
 // Event Listeners:
-submitButton.addEventListener('click', storeUserSelection);
-clearButton.addEventListener('click', clearMessage);
+submitButton.addEventListener('click', function() {
+    storeUserSelection();
+    fadeButtons();
+});
 submitButton.addEventListener('animationend', function() {
     resetAnimation(radioButtonBox);
     resetAnimation(submitButton);
 });
+clearButton.addEventListener('click', clearMessage);
 
 // Event Handlers:
 
@@ -92,7 +96,7 @@ function generateRandomMessage(userSelection) {
         var randomMessage = mantras[randomIndex];
     }
 
-    displayMessage(randomMessage);
+    setTimeout(displayMessage,4000, randomMessage);
 }
 
 function displayMessage(randomMessage) {

@@ -154,26 +154,13 @@ img {
 
 /* XL Screen View */
 @media screen and (min-width: 1200px) {
-  .box {
-    border-radius: 20px;
-  }
-
   #buttons {
     width: 20%;
   }
 
-  .submit-button {
-    border-radius: 14px; 
-  }
-
   .error-box {
     width: 25vw;
-    border-radius: 20px;
-  }
-
-  .clear-button {
-    border-radius: 14px;
-  }
+    }
 }
 
 /* Small Laptop View */
