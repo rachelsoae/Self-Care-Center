@@ -225,19 +225,6 @@ img {
 }
 
 .fade {
-<<<<<<< HEAD
-    animation-name: fade;
-    animation-duration: 8s;
-}
-
-.pause {
-    animation-play-state: paused;
-}
-
-/* .running {
-    animation-play-state: running;
-} */
-=======
   animation-name: fade;
   animation-duration: 8s;
 }
@@ -249,4 +236,3 @@ img {
 .reset {
   animation-name: none;
 }
->>>>>>> 0aaf43868a7309769629307bb8c564197696e55a
