@@ -89,6 +89,10 @@ label {
   padding: 0.2em;
 }
 
+/* .submit-button:hover {
+  background-color: 
+} */
+
 #message-box {
   width: 65vw;
   height: 20vh;
@@ -216,4 +220,31 @@ img {
   h1 {
     font-size: 1.95rem;
   }
+}
+
+@keyframes fade {
+  from {
+    opacity: 100%;
+  }
+
+  50% {
+    opacity: 0%;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 8s;
+}
+
+.pause {
+  animation-play-state: paused;
+}
+
+.reset {
+  animation-name: none;
 }

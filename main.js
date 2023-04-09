@@ -49,6 +49,10 @@ var clearButton = document.querySelector('.clear-button');
 // Event Listeners:
 submitButton.addEventListener('click', storeUserSelection);
 clearButton.addEventListener('click', clearMessage);
+submitButton.addEventListener('animationend', function() {
+    resetAnimation(radioButtonBox);
+    resetAnimation(submitButton);
+});
 
 // Event Handlers:
 
@@ -103,4 +107,21 @@ function clearMessage() {
     hide(message);
     hide(clearButton);
     show(img);
+}
+
+function fadeButtons() {
+    if (affirmationButton.checked || mantraButton.checked) {
+        startAnimation(radioButtonBox, 'fade');
+        startAnimation(submitButton, 'fade');
+    }
+}
+
+function startAnimation(element, animation) {
+    element.classList.remove('reset');
+    element.classList.remove('pause');
+    element.classList.add(animation); 
+}
+
+function resetAnimation(element) {
+    element.classList.add('reset');
 }
