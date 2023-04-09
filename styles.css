@@ -217,3 +217,30 @@ img {
     font-size: 1.95rem;
   }
 }
+
+@keyframes fade {
+  from {
+    opacity: 100%;
+  }
+
+  50% {
+    opacity: 0%;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 8s;
+}
+
+.pause {
+    animation-play-state: paused;
+}
+
+/* .running {
+    animation-play-state: running;
+} */
