@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
   </head>
@@ -9,11 +10,11 @@
     <h2>Which type of message?</h2>
     <div class="box" id="buttons">
       <div class="radio-buttons">
-        <span>
+        <span class="radio">
           <input type="radio" name="userSelection" id="affirmation" value="affirmation">
           <label for="affirmation">affirmation</label>
         </span>
-        <span>
+        <span class="radio">
           <input type="radio" name="userSelection" id="mantra" value="affirmation">
           <label for="affirmation">mantra</label>
         </span>
@@ -23,13 +24,13 @@
       </div>
     </div>
     <section class="error-box invisible">
-      <p>Oops! Please make a selection.</p>
+      <p class="error">Oops! Please make a selection.</p>
     </section>
     <section class="box" id="message-box">
       <img src="assets/meditate.svg" alt="icon of person meditating with aura">
       <p class="message"></p>
     </section>
-    <section>
+    <section class="clear-box">
       <button class="clear-button hidden">Clear Message</button>
     </section>
     <script type="text/javascript" src="main.js"></script>

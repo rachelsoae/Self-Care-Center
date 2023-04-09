@@ -13,6 +13,7 @@ html {
 
 body { 
   background-image: linear-gradient(#134d71 15%, #78a7c6, #f7e4bf);
+  background-attachment: fixed;
   font-family: 'Quicksand', sans-serif;
   display: flex;
   flex-direction: column;
@@ -37,6 +38,7 @@ h2 {
 }
 
 #buttons {
+  width: 35%;
   padding: 0.5rem 6rem 0.75rem;
   display: flex;
   flex-direction: column;
@@ -44,10 +46,9 @@ h2 {
 }
 
 .radio-buttons {
-  margin: 0.5rem;
-  width: 30rem;
+  margin: 1%;
+  width: 90%;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   padding: 0.25rem 0 0.75rem;
 }
@@ -77,23 +78,19 @@ label {
 }
 
 #message-box {
-  width: 60rem;
+  width: 75%;
   height: 10rem;
   font-size: 1.5rem;
-  margin: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-#message {
-  margin: 4rem;
-}
-
 img {
-  max-width: 10%;
-  margin: 5px;
+  max-width 100%;
+  height: 65%;
+  margin: 0.5%;
 }
 
 .hidden {
@@ -101,22 +98,82 @@ img {
 }
 
 .error-box {
-    background-color: #f7e4bf;
-    border-radius: 12px;
-    padding: 1rem;
-    margin: 3rem 0 2.25rem;
+  background-color: #f7e4bf;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  margin: 1.5rem;
+}
+
+.error {
+  width: 100%;
+  font-size: 1.25rem;
+  text-align: center;
+  margin: 2%;
 }
 
 .invisible {
-    visibility: hidden;
+  visibility: hidden;
+}
+
+.clear-box {
+    display:flex;
+    justify-content: center;
 }
 
 .clear-button {
-    font-family: 'Quicksand', sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.125rem;
+  padding: 0.5rem;
+  border-color: #ffffff;
+  border-width: 0;
+  border-radius: 8px;
+  width: 100%;
+  margin: 15% 0;
+  opacity: 0.75;
+}
+
+/* tablet settings */
+@media screen and (max-width: 768px) {
+  h2 {
+    margin: 0 0 0.5rem;
+  }
+
+  #buttons {
+    width: 50%;
+    padding: 0.5rem 2rem 0.75rem;
+  }
+  
+  .radio-buttons {
+    width: 85%;
+  }
+
+  input {
+    height: 1.125rem;
+    width: 1.125rem;
+  }
+  
+  label {
+    font-size: 1.25rem;
+  }
+
+  .error-box {
+    width: 40%;
+    margin: 1.25rem;
     padding: 0.5rem;
-    border-color: #ffffff;
-    border-width: 0;
-    border-radius: 8px;
-    margin: 0.1rem;
-    opacity: 0.75;
+  }
+
+  .error {
+    margin: 0.5%;
+  }
+
+  .clear-box {
+    width: 100%;
+  }
+
+  .clear-button {
+    width: 20%;
+    padding: 0.5rem;
+    margin: 1.25rem;
+    font-size: 1.10rem;
+  }
 }
