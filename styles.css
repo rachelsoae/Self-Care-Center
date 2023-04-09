@@ -89,6 +89,10 @@ label {
   padding: 0.2em;
 }
 
+/* .submit-button:hover {
+  background-color: 
+} */
+
 #message-box {
   width: 65vw;
   height: 20vh;
@@ -149,26 +153,14 @@ img {
 }
 
 /* XL Screen View */
-@media screen and (min-width: 1441px) {
-  html {
-    font-size: 225%;
-  }
-
-  .box {
-    border-radius: 20px;
-  }
-
-  .submit-button {
-    border-radius: 14px; 
+@media screen and (min-width: 1200px) {
+  #buttons {
+    width: 20%;
   }
 
   .error-box {
-    border-radius: 20px;
-  }
-
-  .clear-button {
-    border-radius: 14px;
-  }
+    width: 25vw;
+    }
 }
 
 /* Small Laptop View */
@@ -233,6 +225,7 @@ img {
 }
 
 .fade {
+<<<<<<< HEAD
     animation-name: fade;
     animation-duration: 8s;
 }
@@ -244,3 +237,16 @@ img {
 /* .running {
     animation-play-state: running;
 } */
+=======
+  animation-name: fade;
+  animation-duration: 8s;
+}
+
+.pause {
+  animation-play-state: paused;
+}
+
+.reset {
+  animation-name: none;
+}
+>>>>>>> 0aaf43868a7309769629307bb8c564197696e55a

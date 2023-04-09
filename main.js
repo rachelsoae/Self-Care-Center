@@ -52,6 +52,10 @@ submitButton.addEventListener('click', function() {
     storeUserSelection();
     fadeButtons();
 });
+submitButton.addEventListener('animationend', function() {
+    resetAnimation(radioButtonBox);
+    resetAnimation(submitButton);
+});
 clearButton.addEventListener('click', clearMessage);
 
 // Event Handlers:
@@ -117,6 +121,11 @@ function fadeButtons() {
 }
 
 function startAnimation(element, animation) {
+    element.classList.remove('reset');
     element.classList.remove('pause');
-    element.classList.add(animation);
+    element.classList.add(animation); 
+}
+
+function resetAnimation(element) {
+    element.classList.add('reset');
 }
