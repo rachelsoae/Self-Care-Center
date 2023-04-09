@@ -85,7 +85,7 @@ function generateRandomMessage(userSelection) {
         var randomMessage = affirmations[randomIndex];
     } else  if (userSelection === 'mantra') {
         var randomIndex = getRandomIndex(mantras);
-        var randomMessage = affirmations[randomIndex];
+        var randomMessage = mantras[randomIndex];
     }
 
     displayMessage(randomMessage);
