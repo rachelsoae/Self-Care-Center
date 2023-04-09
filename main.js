@@ -73,7 +73,7 @@ function storeUserSelection() {
 }
 
 function getRandomIndex(array) {
-    var randomIndex = Math.floor(Math.random() * array.length);
+    var randomIndex = Math.floor(Math.random() * (array.length - 1));
     return randomIndex;
 }
 
