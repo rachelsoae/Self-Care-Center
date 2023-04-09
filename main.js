@@ -50,12 +50,21 @@ var radioButtonBox = document.querySelector('.radio-buttons');
 // Event Listeners:
 submitButton.addEventListener('click', function() {
     storeUserSelection();
-    fadeButtons();
+    if (affirmationButton.checked || mantraButton.checked) {
+        fade(radioButtonBox);
+        fade(submitButton);
+        fadeOut(img);
+    }
 });
+
 submitButton.addEventListener('animationend', function() {
     resetAnimation(radioButtonBox);
     resetAnimation(submitButton);
+    resetAnimation(img);
+    resetAnimation(message);
+    resetAnimation(clearButton);
 });
+
 clearButton.addEventListener('click', clearMessage);
 
 // Event Handlers:
@@ -100,6 +109,8 @@ function generateRandomMessage(userSelection) {
 }
 
 function displayMessage(randomMessage) {
+    fadeIn(message);
+    fadeIn(clearButton);
     hide(img);
     show(message);
     show(clearButton);
@@ -108,16 +119,12 @@ function displayMessage(randomMessage) {
 }
 
 function clearMessage() {
-    hide(message);
-    hide(clearButton);
-    show(img);
-}
-
-function fadeButtons() {
-    if (affirmationButton.checked || mantraButton.checked) {
-        startAnimation(radioButtonBox, 'fade');
-        startAnimation(submitButton, 'fade');
-    }
+    fadeOut(message);
+    fadeOut(clearButton);
+    setTimeout(hide, 4000, message);
+    setTimeout(hide, 4000, clearButton);
+    setTimeout(show, 4000, img);
+    setTimeout(fadeIn, 4000, img);
 }
 
 function startAnimation(element, animation) {
@@ -126,6 +133,28 @@ function startAnimation(element, animation) {
     element.classList.add(animation); 
 }
 
+// function fade() {
+//     if (affirmationButton.checked || mantraButton.checked) {
+//         startAnimation(radioButtonBox, 'fade');
+//         startAnimation(submitButton, 'fade');
+//         startAnimation(img, 'fadeout');
+//         startAnimation(message, 'fadein');
+//         startAnimation(clearButton, 'fadein');
+//     }
+// }
+
 function resetAnimation(element) {
     element.classList.add('reset');
+}
+
+function fadeIn(element) {
+    startAnimation(element, 'fadein');
+}
+
+function fadeOut(element) {
+    startAnimation(element, 'fadeout');
+}
+
+function fade(element) {
+    startAnimation(element, 'fade');
 }

@@ -62,6 +62,10 @@ input {
   width: 1.25rem;
 }
 
+input:hover {
+  border-width: 200px;
+}
+
 label {
   color: #000000;
   font-style: italic;
@@ -89,9 +93,9 @@ label {
   padding: 0.2em;
 }
 
-/* .submit-button:hover {
-  background-color: 
-} */
+.submit-button:hover {
+  background-color: #78a7c6;
+}
 
 #message-box {
   width: 65vw;
@@ -150,6 +154,10 @@ img {
   width: 100%;
   margin-top: 1em;
   opacity: 0.75;
+}
+
+.clear-button:hover {
+  background-color: #78a7c6;
 }
 
 /* XL Screen View */
@@ -212,15 +220,15 @@ img {
 
 @keyframes fade {
   from {
-    opacity: 100%;
+    opacity: 1;
   }
 
   50% {
-    opacity: 0%;
+    opacity: 0;
   }
 
   to {
-    opacity: 100%;
+    opacity: 1;
   }
 }
 
@@ -235,4 +243,33 @@ img {
 
 .reset {
   animation-name: none;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fadein {
+  animation-name: fadein;
+  animation-duration: 4s;
+}
+
+.fadeout {
+  animation-name: fadeout;
+  animation-duration: 4s;
 }
