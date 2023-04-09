@@ -153,13 +153,13 @@ img {
 }
 
 /* XL Screen View */
-@media screen and (min-width: 1441px) {
-  html {
-    font-size: 225%;
-  }
-
+@media screen and (min-width: 1200px) {
   .box {
     border-radius: 20px;
+  }
+
+  #buttons {
+    width: 20%;
   }
 
   .submit-button {
@@ -167,6 +167,7 @@ img {
   }
 
   .error-box {
+    width: 25vw;
     border-radius: 20px;
   }
 
