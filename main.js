@@ -36,7 +36,7 @@ var mantras = [
 
 var userSelection;
 
-// Variables:
+    // Variables:
 var affirmationButton = document.querySelector('#affirmation');
 var mantraButton = document.querySelector('#mantra');
 var submitButton = document.querySelector('button');
@@ -47,28 +47,23 @@ var message = document.querySelector('.message');
 var clearButton = document.querySelector('.clear-button');
 var radioButtonBox = document.querySelector('.radio-buttons');
 
-// Event Listeners:
+    // Event Listeners:
 submitButton.addEventListener('click', function() {
     storeUserSelection();
     if (affirmationButton.checked || mantraButton.checked) {
         fade(radioButtonBox);
         fade(submitButton);
-        fadeOut(img);
     }
 });
 
 submitButton.addEventListener('animationend', function() {
     resetAnimation(radioButtonBox);
     resetAnimation(submitButton);
-    resetAnimation(img);
-    resetAnimation(message);
-    resetAnimation(clearButton);
 });
 
 clearButton.addEventListener('click', clearMessage);
 
-// Event Handlers:
-
+    // Event Handlers:
 function show(element) {
     element.classList.remove('hidden');
 }
@@ -119,29 +114,16 @@ function displayMessage(randomMessage) {
 }
 
 function clearMessage() {
-    fadeOut(message);
-    fadeOut(clearButton);
-    setTimeout(hide, 4000, message);
-    setTimeout(hide, 4000, clearButton);
-    setTimeout(show, 4000, img);
-    setTimeout(fadeIn, 4000, img);
+    hide(message);
+    hide(clearButton);
+    show(img);
 }
 
 function startAnimation(element, animation) {
     element.classList.remove('reset');
     element.classList.remove('pause');
     element.classList.add(animation); 
-}
-
-// function fade() {
-//     if (affirmationButton.checked || mantraButton.checked) {
-//         startAnimation(radioButtonBox, 'fade');
-//         startAnimation(submitButton, 'fade');
-//         startAnimation(img, 'fadeout');
-//         startAnimation(message, 'fadein');
-//         startAnimation(clearButton, 'fadein');
-//     }
-// }
+}   
 
 function resetAnimation(element) {
     element.classList.add('reset');

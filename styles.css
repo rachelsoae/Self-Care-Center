@@ -237,14 +237,6 @@ img {
   animation-duration: 8s;
 }
 
-.pause {
-  animation-play-state: paused;
-}
-
-.reset {
-  animation-name: none;
-}
-
 @keyframes fadein {
   from {
     opacity: 0;
@@ -272,4 +264,12 @@ img {
 .fadeout {
   animation-name: fadeout;
   animation-duration: 4s;
+}
+
+.reset {
+  animation-name: none;
+}
+
+.pause {
+  animation-play-state: paused;
 }
