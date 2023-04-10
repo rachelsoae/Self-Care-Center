@@ -8,11 +8,14 @@ black - #000000;
 */
 
 html {
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
+  font-size: 100%;
 }
 
 body { 
   background-image: linear-gradient(#134d71 15%, #78a7c6, #f7e4bf);
+  background-attachment: fixed;
   font-family: 'Quicksand', sans-serif;
   display: flex;
   flex-direction: column;
@@ -21,14 +24,15 @@ body {
 
 h1 {
   color: #ffffff;
-  font-size: 2.35rem;
-  margin: 3rem;
+  font-size: 2rem;
+  margin: 1.125em;
 }
 
 h2 {
   color: #ffffff;
-  font-size: 1.75rem;
-  margin: 4rem 0 0.5rem;
+  font-size: 1.5rem;
+  margin-top: 2em;
+  margin-bottom: 0.25em;
 }
 
 .box {
@@ -37,19 +41,20 @@ h2 {
 }
 
 #buttons {
-  padding: 0.5rem 6rem 0.75rem;
+  width: 28vw;
+  padding: 0 6em;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .radio-buttons {
-  margin: 0.5rem;
-  width: 30rem;
+  height: 50%;
+  width: 100%;
+  padding: 0.5em 0.125em;
+  margin: 0.5em;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  padding: 0.25rem 0 0.75rem;
 }
 
 input {
@@ -57,43 +62,55 @@ input {
   width: 1.25rem;
 }
 
+input:hover {
+  border-width: 200px;
+}
+
 label {
   color: #000000;
   font-style: italic;
-  font-size: 1.4rem;
-  padding-left: 0.75rem;
+  font-size: 1.25rem;
+  padding-left: 0.4em;
+}
+
+.submit-button-box {
+  height: 50%;
+  width: 65%;
+  padding: 0.375em 1em 0.5em;
+  display: flex;
+  justify-content: center;
 }
 
 .submit-button {
-  width: 15rem;
-  height: 2rem;
+  height: 100%;
+  width: 100%;
   background-color: #134d71;
   color: #ffffff; 
   font-family: 'Quicksand', sans-serif;
-  font-size: 1.3rem;
-  padding: 0.25rem 1rem 2rem;
+  font-size: 1.25rem;
   border: 0;
-  border-radius: 8px; 
+  border-radius: 6px; 
+  padding: 0.2em;
+}
+
+.submit-button:hover {
+  background-color: #78a7c6;
 }
 
 #message-box {
-  width: 60rem;
-  height: 10rem;
+  width: 65vw;
+  height: 20vh;
   font-size: 1.5rem;
-  margin: 1rem;
+  padding: 0 1em;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-#message {
-  margin: 4rem;
-}
-
 img {
-  max-width: 10%;
-  margin: 5px;
+  width: 100%;
+  height: 55%;
 }
 
 .hidden {
@@ -101,22 +118,158 @@ img {
 }
 
 .error-box {
-    background-color: #f7e4bf;
-    border-radius: 12px;
-    padding: 1rem;
-    margin: 3rem 0 2.25rem;
+  height: 5vh;
+  width: 40vw;
+  background-color: #f7e4bf;
+  border-radius: 10px;
+  padding: 0.25em;
+  margin: 2em;
+  display: flex;
+  align-items: center;
+}
+
+.error {
+  width: 100%;
+  font-size: 1.25rem;
+  text-align: center;
+  margin: 0.125em 0.75em;
 }
 
 .invisible {
-    visibility: hidden;
+  visibility: hidden;
+}
+
+.clear-box {
+  display:flex;
+  justify-content: center;
 }
 
 .clear-button {
-    font-family: 'Quicksand', sans-serif;
-    padding: 0.5rem;
-    border-color: #ffffff;
-    border-width: 0;
-    border-radius: 8px;
-    margin: 0.1rem;
-    opacity: 0.75;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.125rem;
+  padding: 0.375em 0.5em;
+  border-color: #ffffff;
+  border-width: 0;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 1em;
+  opacity: 0.75;
+}
+
+.clear-button:hover {
+  background-color: #78a7c6;
+}
+
+/* XL Screen View */
+@media screen and (min-width: 1200px) {
+  #buttons {
+    width: 20%;
+  }
+
+  .error-box {
+    width: 25vw;
+    }
+}
+
+/* Small Laptop View */
+@media screen and (max-width: 1200px) {
+  #buttons {
+    width: 35%;
+  }
+}
+
+/* Tablet View */
+@media screen and (max-width: 960px) {
+  html {
+    font-size: 75%;  
+  }  
+}
+
+/* Mobile View */
+@media screen and (max-width: 700px) {
+  #buttons {
+    width: 50%;
+    padding: 0 2em;
+  }
+  
+  .radio-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .radio {
+    width: 75%;
+    padding-left: 2em;
+  }
+
+  .submit-button-box {
+    width: 80%;
+  }
+
+  .error-box {
+    width: 60vw;
+  }
+}
+
+@media screen and (max-width: 323px) {
+  h1 {
+    font-size: 1.95rem;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 8s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fadein {
+  animation-name: fadein;
+  animation-duration: 4s;
+}
+
+.fadeout {
+  animation-name: fadeout;
+  animation-duration: 4s;
+}
+
+.reset {
+  animation-name: none;
+}
+
+.pause {
+  animation-play-state: paused;
 }

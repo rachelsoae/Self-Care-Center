@@ -36,7 +36,7 @@ var mantras = [
 
 var userSelection;
 
-// Variables:
+    // Variables:
 var affirmationButton = document.querySelector('#affirmation');
 var mantraButton = document.querySelector('#mantra');
 var submitButton = document.querySelector('button');
@@ -45,13 +45,25 @@ var img = document.querySelector('img');
 var messageSection = document.querySelector('#message-box');
 var message = document.querySelector('.message');
 var clearButton = document.querySelector('.clear-button');
+var radioButtonBox = document.querySelector('.radio-buttons');
 
-// Event Listeners:
-submitButton.addEventListener('click', storeUserSelection);
+    // Event Listeners:
+submitButton.addEventListener('click', function() {
+    storeUserSelection();
+    if (affirmationButton.checked || mantraButton.checked) {
+        fade(radioButtonBox);
+        fade(submitButton);
+    }
+});
+
+submitButton.addEventListener('animationend', function() {
+    resetAnimation(radioButtonBox);
+    resetAnimation(submitButton);
+});
+
 clearButton.addEventListener('click', clearMessage);
 
-// Event Handlers:
-
+    // Event Handlers:
 function show(element) {
     element.classList.remove('hidden');
 }
@@ -85,13 +97,15 @@ function generateRandomMessage(userSelection) {
         var randomMessage = affirmations[randomIndex];
     } else  if (userSelection === 'mantra') {
         var randomIndex = getRandomIndex(mantras);
-        var randomMessage = affirmations[randomIndex];
+        var randomMessage = mantras[randomIndex];
     }
 
-    displayMessage(randomMessage);
+    setTimeout(displayMessage, 4000, randomMessage);
 }
 
 function displayMessage(randomMessage) {
+    fadeIn(message);
+    fadeIn(clearButton);
     hide(img);
     show(message);
     show(clearButton);
@@ -103,4 +117,26 @@ function clearMessage() {
     hide(message);
     hide(clearButton);
     show(img);
+}
+
+function startAnimation(element, animation) {
+    element.classList.remove('reset');
+    element.classList.remove('pause');
+    element.classList.add(animation); 
+}   
+
+function resetAnimation(element) {
+    element.classList.add('reset');
+}
+
+function fadeIn(element) {
+    startAnimation(element, 'fadein');
+}
+
+function fadeOut(element) {
+    startAnimation(element, 'fadeout');
+}
+
+function fade(element) {
+    startAnimation(element, 'fade');
 }
