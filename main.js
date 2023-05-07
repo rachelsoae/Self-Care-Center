@@ -106,7 +106,7 @@ function generateRandomMessage(userSelection) {
         randomMessage = mantras[randomIndex];
     };
 
-    setTimeout(displayMessage, 4000, randomMessage);
+    setTimeout(displayMessage, 2000, randomMessage);
 };
 
 function displayMessage(randomMessage) {
