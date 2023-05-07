@@ -51,11 +51,13 @@ const radioButtonBox = document.querySelector('.radio-buttons');
 // Event Listeners:
 
 submitButton.addEventListener('click', function() {
-    storeUserSelection();
     if (affirmationButton.checked || mantraButton.checked) {
+        storeUserSelection();  
         fade(radioButtonBox);
         fade(submitButton);
-    }
+    } else {
+        errorBox.classList.remove('invisible');
+    };
 });
 
 submitButton.addEventListener('animationend', function() {
@@ -82,9 +84,7 @@ function storeUserSelection() {
     } else if (mantraButton.checked) {
         userSelection = 'mantra';
         generateRandomMessage(userSelection);
-    } else {
-        errorBox.classList.remove('invisible');
-    };
+    } 
 };
 
 function getRandomIndex(array) {
@@ -95,14 +95,12 @@ function getRandomIndex(array) {
 function generateRandomMessage(userSelection) {
     errorBox.classList.add('invisible');
 
-    let randomIndex;
+    let randomIndex = getRandomIndex(userSelection);
     let randomMessage;
 
     if (userSelection === 'affirmation') {
-        randomIndex = getRandomIndex(affirmations);
         randomMessage = affirmations[randomIndex];
     } else if (userSelection === 'mantra') {
-        randomIndex = getRandomIndex(mantras);
         randomMessage = mantras[randomIndex];
     };
 
