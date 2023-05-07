@@ -55,6 +55,7 @@ submitButton.addEventListener('click', function() {
         storeUserSelection();  
         fade(radioButtonBox);
         fade(submitButton);
+        errorBox.classList.add('invisible');
     } else {
         errorBox.classList.remove('invisible');
     };
@@ -87,13 +88,10 @@ function storeUserSelection() {
 };
 
 function getRandomIndex(array) {
-    const randomIndex = Math.floor(Math.random() * (array.length - 1));
-    return randomIndex;
+    return Math.floor(Math.random() * (array.length - 1));
 };
 
 function generateRandomMessage(userSelection) {
-    errorBox.classList.add('invisible');
-
     let randomIndex = getRandomIndex(userSelection);
     let randomMessage;
 
