@@ -80,11 +80,10 @@ function hide(element) {
 function storeUserSelection() {
     if (affirmationButton.checked) {
         userSelection = 'affirmation';
-        generateRandomMessage(userSelection);
-    } else if (mantraButton.checked) {
+    } else {
         userSelection = 'mantra';
-        generateRandomMessage(userSelection);
-    } 
+    };
+    generateRandomMessage(userSelection);
 };
 
 function getRandomIndex(array) {
@@ -100,7 +99,7 @@ function generateRandomMessage(userSelection) {
 
     if (userSelection === 'affirmation') {
         randomMessage = affirmations[randomIndex];
-    } else if (userSelection === 'mantra') {
+    } else {
         randomMessage = mantras[randomIndex];
     };
 
